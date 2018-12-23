@@ -47,7 +47,7 @@ docker-compose pull
 ```
 
 ## Specifying Data
-The two metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](./wiki) for detailed instructions. 
+The two metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/mutation-signature-explorer-docker/wiki) for detailed instructions. 
 
 
 ## Running
