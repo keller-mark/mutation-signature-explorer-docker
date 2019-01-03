@@ -6,6 +6,8 @@ services:
     image: lrgr/imuse:latest
     ports:
     - "8000:80"
+    environment:
+    - IMUSE_SERVER_URL=http://localhost:8100/
   backend:
     depends_on:
     - db
