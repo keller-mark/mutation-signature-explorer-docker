@@ -21,8 +21,13 @@ Run `pwd` in this directory and make note of the absolute path.
 The two metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/mutation-signature-explorer-docker/wiki) for detailed instructions about file formats. 
 
 ### The database directory
-Notice the `mysql` folder within `mutation-signature-explorer-docker`.
-This is where iMuSE-server will store the database used for saving/sharing iMuSE sessions with history.
+Run the following command to create a `mysql` folder within `mutation-signature-explorer-docker`:
+
+```sh
+mkdir mysql
+```
+
+This is where iMuSE-server will store the database used for saving/sharing iMuSE sessions and history.
 Run `pwd` in this directory and make note of the absolute path.
 
 ### The docker-compose file
