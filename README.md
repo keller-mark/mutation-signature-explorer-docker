@@ -18,7 +18,7 @@ Notice the `obj` folder within `imuse-docker`.
 This is where iMuSE-server will look for data.
 Run `pwd` in this directory and make note of the absolute path.
 
-The two metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/imuse-docker/wiki) for detailed instructions about file formats. 
+The metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/imuse-docker/wiki) for detailed instructions about file formats. 
 
 ### The database directory
 Run the following command to create a `mysql` folder within `imuse-docker`:
