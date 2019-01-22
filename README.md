@@ -5,23 +5,23 @@ To run iMuSE and iMuSE-server locally using docker:
 
 Clone this repository
 ```
-git clone https://github.com/lrgr/mutation-signature-explorer-docker.git
+git clone https://github.com/lrgr/imuse-docker.git
 ```
 
 Enter into this repository
 ```
-cd mutation-signature-explorer-docker
+cd imuse-docker
 ```
 
 ### The data directory
-Notice the `obj` folder within `mutation-signature-explorer-docker`.
+Notice the `obj` folder within `imuse-docker`.
 This is where iMuSE-server will look for data.
 Run `pwd` in this directory and make note of the absolute path.
 
-The two metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/mutation-signature-explorer-docker/wiki) for detailed instructions about file formats. 
+The two metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/imuse-docker/wiki) for detailed instructions about file formats. 
 
 ### The database directory
-Run the following command to create a `mysql` folder within `mutation-signature-explorer-docker`:
+Run the following command to create a `mysql` folder within `imuse-docker`:
 
 ```sh
 mkdir mysql
@@ -31,7 +31,7 @@ This is where iMuSE-server will store the database used for saving/sharing iMuSE
 Run `pwd` in this directory and make note of the absolute path.
 
 ### The docker-compose file
-Notice the `docker-compose.yml` file within `mutation-signature-explorer-docker`.
+Notice the `docker-compose.yml` file within `imuse-docker`.
 
 Update this file:
 
