@@ -5,7 +5,7 @@ To run iMuSE and iMuSE-server locally using docker:
 
 Install Docker and Docker Compose:
 - [Docker](https://docs.docker.com/) [for Mac](https://docs.docker.com/docker-for-mac/install/) or [for Windows](https://docs.docker.com/docker-for-windows/install/)
-- [Docker Compose](https://docs.docker.com/compose/install/) (should come bundled with Docker Desktop)
+- [Docker Compose](https://docs.docker.com/compose/install/) (should come bundled with Docker)
 
 Clone this repository
 ```
