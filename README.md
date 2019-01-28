@@ -1,4 +1,4 @@
-# iMuSE - Docker Configuration
+# iMuSE Docker Configuration
 
 ## Setup
 To run [iMuSE](https://github.com/lrgr/imuse) and [iMuSE Server](https://github.com/lrgr/imuse-server) locally using docker:
