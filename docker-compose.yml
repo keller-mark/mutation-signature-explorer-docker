@@ -3,15 +3,15 @@ services:
   frontend:
     depends_on:
     - backend
-    image: lrgr/imuse:latest
+    image: lrgr/explosig:latest
     ports:
     - "8000:80"
     environment:
-    - IMUSE_SERVER_URL=http://localhost:8100/
+    - EXPLOSIG_SERVER_URL=http://localhost:8100/
   backend:
     depends_on:
     - db
-    image: lrgr/imuse-server:latest
+    image: lrgr/explosig-server:latest
     ports:
     - "8100:80"
     links:
@@ -22,9 +22,9 @@ services:
     image: mysql:5.7
     environment:
     - MYSQL_ROOT_PASSWORD=root
-    - MYSQL_DATABASE=imuse
-    - MYSQL_USER=imuse
-    - MYSQL_PASSWORD=imuse
+    - MYSQL_DATABASE=explosig
+    - MYSQL_USER=explosig
+    - MYSQL_PASSWORD=explosig
     command: --default-authentication-plugin=mysql_native_password
     volumes:
     - /path/to/your/mysql:/var/lib/mysql
