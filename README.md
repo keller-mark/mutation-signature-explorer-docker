@@ -46,31 +46,13 @@ Update this file:
 version: '2'
 services:
   frontend:
-    depends_on:
-    - backend
-    image: lrgr/explosig:latest
-    ports:
-    - "8000:80"
-    environment:
-    - EXPLOSIG_SERVER_URL=http://localhost:8100/
+    ...
   backend:
-    depends_on:
-    - db
-    image: lrgr/explosig-server:latest
-    ports:
-    - "8100:80"
-    links:
-    - db
+    ...
     volumes:
     - /path/to/your/obj:/obj                    <----------- UPDATE
   db:
-    image: mysql:5.7
-    environment:
-    - MYSQL_ROOT_PASSWORD=root
-    - MYSQL_DATABASE=explosig
-    - MYSQL_USER=explosig
-    - MYSQL_PASSWORD=explosig
-    command: --default-authentication-plugin=mysql_native_password
+    ...
     volumes:
     - /path/to/your/mysql:/var/lib/mysql        <----------- UPDATE
 ```
