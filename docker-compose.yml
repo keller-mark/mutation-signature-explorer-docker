@@ -19,7 +19,7 @@ services:
     volumes:
     - /path/to/your/obj:/obj
     environment:
-    - EXPLOSIG_PASSWORD_HASH=${EXPOSIG_PASSWORD_HASH}
+    - EXPLOSIG_PASSWORD_HASH=${EXPLOSIG_PASSWORD_HASH}
     - EXPLOSIG_DB_USER=${EXPLOSIG_DB_USER}
     - EXPLOSIG_DB_PASSWORD=${EXPLOSIG_DB_PASSWORD}
   db:
