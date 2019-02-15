@@ -18,13 +18,17 @@ services:
     - db
     volumes:
     - /path/to/your/obj:/obj
+    environment:
+    - EXPLOSIG_PASSWORD_HASH=${EXPLOSIG_PASSWORD_HASH}
+    - EXPLOSIG_DB_USER=${EXPLOSIG_DB_USER}
+    - EXPLOSIG_DB_PASSWORD=${EXPLOSIG_DB_PASSWORD}
   db:
     image: mysql:5.7
     environment:
-    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_ROOT_PASSWORD=${EXPLOSIG_DB_PASSWORD_ROOT}
     - MYSQL_DATABASE=explosig
-    - MYSQL_USER=explosig
-    - MYSQL_PASSWORD=explosig
+    - MYSQL_USER=${EXPLOSIG_DB_USER}
+    - MYSQL_PASSWORD=${EXPLOSIG_DB_PASSWORD}
     command: --default-authentication-plugin=mysql_native_password
     volumes:
     - /path/to/your/mysql:/var/lib/mysql
