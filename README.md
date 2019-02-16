@@ -1,5 +1,7 @@
 # ExploSig Docker Configuration
 
+[Please visit the wiki for information about customizing this configuration.](https://github.com/lrgr/explosig-docker/wiki)
+
 ## Setup
 To run [ExploSig](https://github.com/lrgr/explosig) and [ExploSig Server](https://github.com/lrgr/explosig-server) locally using docker:
 
@@ -22,7 +24,7 @@ Notice the `obj` folder within `explosig-docker`.
 This is where ExploSig Server will look for data.
 Run `pwd` in this directory and make note of the absolute path.
 
-The metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/explosig-docker/wiki) for detailed instructions about file formats. 
+The metadata files in the `obj` directory can be updated to specify custom signatures and/or mutation datasets. Please see the [wiki](https://github.com/lrgr/explosig-docker/wiki) for detailed information about file formats.
 
 ### The database directory
 Run the following command to create a `mysql` folder within `explosig-docker`:
