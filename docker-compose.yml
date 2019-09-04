@@ -1,27 +1,33 @@
 version: '2'
 services:
-  frontend:
+  explosig:
     depends_on:
-    - backend
-    image: lrgr/imuse:latest
+    - explosig_server
+    image: lrgr/explosig:latest
     ports:
     - "8000:80"
     environment:
     - EXPLOSIG_SERVER_URL=http://localhost:8100/
-  backend:
+  explosig_server:
     depends_on:
     - db
-    image: lrgr/imuse-server:latest
+    - explosig_connect
+    image: lrgr/explosig-server:latest
     ports:
     - "8100:80"
     links:
     - db
+    - explosig_connect
     volumes:
     - /path/to/your/obj:/obj
     environment:
     - EXPLOSIG_PASSWORD_HASH=${EXPLOSIG_PASSWORD_HASH}
     - EXPLOSIG_DB_USER=${EXPLOSIG_DB_USER}
     - EXPLOSIG_DB_PASSWORD=${EXPLOSIG_DB_PASSWORD}
+  explosig_connect:
+    image: lrgr/explosig-connect:latest
+    ports:
+    - "8200:8200"
   db:
     image: mysql:5.7
     environment:
