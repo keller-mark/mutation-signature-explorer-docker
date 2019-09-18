@@ -47,16 +47,16 @@ Update this file:
 ```
 version: '2'
 services:
-  frontend:
+  explosig:
     ...
-  backend:
+  explosig_server:
     ...
     volumes:
-    - /path/to/your/obj:/obj                    <----------- UPDATE
+    - /path/to/your/obj:/obj                     <--------- UPDATE
   db:
     ...
     volumes:
-    - /path/to/your/mysql:/var/lib/mysql        <----------- UPDATE
+    - /path/to/your/mysql:/var/lib/mysql         <--------- UPDATE
 ```
 
 ### Pull
@@ -78,4 +78,11 @@ docker-compose up
 Run the two docker containers in the background
 ```
 docker-compose up -d
+```
+
+### Up - development
+Run the development containers (code as mounted volumes).
+```
+export EXPLOSIG_DEV_PATH=$(pwd)/../
+docker-compose -f dev.docker-compose.yml up
 ```
