@@ -3,31 +3,36 @@ services:
   explosig:
     depends_on:
     - explosig_server
-    image: lrgr/explosig:latest
+    image: lrgr/explosig-dev:latest
     ports:
-    - "8000:80"
+    - "8000:8080"
     environment:
     - EXPLOSIG_SERVER_URL=http://localhost:8100/
+    volumes:
+    - ${EXPLOSIG_DEV_PATH}/explosig/src:/src
   explosig_server:
     depends_on:
     - db
     - explosig_connect
-    image: lrgr/explosig-server:latest
+    image: lrgr/explosig-server-dev:latest
     ports:
     - "8100:8100"
     links:
     - db
     - explosig_connect
     volumes:
-    - /path/to/your/obj:/obj
+    - ${EXPLOSIG_DEV_PATH}/explosig-server/obj:/obj
+    - ${EXPLOSIG_DEV_PATH}/explosig-server/server:/app
     environment:
     - EXPLOSIG_PASSWORD_HASH=${EXPLOSIG_PASSWORD_HASH}
     - EXPLOSIG_DB_USER=${EXPLOSIG_DB_USER}
     - EXPLOSIG_DB_PASSWORD=${EXPLOSIG_DB_PASSWORD}
   explosig_connect:
-    image: lrgr/explosig-connect:latest
+    image: lrgr/explosig-connect-dev:latest
     ports:
     - "8200:8200"
+    volumes:
+    - ${EXPLOSIG_DEV_PATH}/explosig-server/connect:/app
   db:
     image: mysql:5.7
     environment:
@@ -37,4 +42,4 @@ services:
     - MYSQL_PASSWORD=${EXPLOSIG_DB_PASSWORD}
     command: --default-authentication-plugin=mysql_native_password --ssl=0
     volumes:
-    - /path/to/your/mysql:/var/lib/mysql
+    - ${EXPLOSIG_DEV_PATH}/explosig-server/mysql:/var/lib/mysql
